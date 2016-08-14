@@ -1,0 +1,30 @@
+<div class="doctor-grid" ng-controller='MainCtrl as mainVm'>
+	<form class="text-box">
+		<input type="text" ng-model="mainVm.filterName" placeholder="Search by specialty or name And sort by Review or Experience" class="form-control"></input>	
+	</form>
+	
+	<div class="table-responsive">
+	  <table class="table">
+	    <thead>
+	    	<th>Name
+	    	<th>Specialty
+	    	<th><i ng-click="mainVm.sort.by='review'; mainVm.sort.reverse=!mainVm.sort.reverse;" class="fa fa-sort" aria-hidden="true"></i>&#09;Review<span class="block">(out of 5)</span>
+	    	<th><i ng-click="mainVm.sort.by='experience'; mainVm.sort.reverse=!mainVm.sort.reverse;" class="fa fa-sort" aria-hidden="true"></i>&#32;Experience<span class="block">(years)</span>
+	    	<th>Email/Phone
+	    	<th>Address
+	    	<th>Website
+	    </thead>
+	    <tbody>
+	    	<tr ng-repeat="data in mainVm.doctorData | filter : mainVm.filterName | orderBy:mainVm.sort.by:mainVm.sort.reverse">
+	    		<td>{{data.name}}
+	    		<td>{{data.specialty}}
+		    	<td>{{data.review}}
+		    	<td>{{data.experience}}
+	    		<td>{{data.email}}<br>{{data.phone}}
+	    		<td>{{data.address.street}}<br>{{data.address.suite}}<br>{{data.address.city}}<br>{{data.address.zipcode}}
+	    		<td>{{data.website}}
+	    	</tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>

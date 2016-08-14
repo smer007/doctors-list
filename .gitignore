@@ -1,0 +1,10 @@
+/node_modules
+/dist
+/.tmp
+/.yo-rc.json
+/.jscsrc
+/.jshintrc
+/.editorconfig
+/.sass-cache
+/bower_components
+/test/spec/.jshintrc
